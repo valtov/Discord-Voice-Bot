@@ -1,5 +1,5 @@
 destiny_audio/
-config.json
 key.json
-auth_keys
-node_modules
+auth_keys/
+node_modules/
+config.json
