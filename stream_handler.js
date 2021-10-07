@@ -2,7 +2,7 @@ const ffmpeg = require('fluent-ffmpeg');
 const Bumblebee = require('bumblebee-hotword-node');
 const intent = require("./dialogflow.js")
 const ConvertTo1Channel = require("./stream_transformer.js")
-
+const hotword = require("./hotword.js").HOTWORD
 let detectedHotwordLast = false
 
 async function processStream(inputStream, connection, server) {
@@ -12,14 +12,12 @@ async function processStream(inputStream, connection, server) {
 		const Converter = new ConvertTo1Channel()
 		let s1 = inputStream.pipe(Converter)
 		const sttResult = await intent.streamingDetectIntent('music-rett', 1, s1, 'AUDIO_ENCODING_LINEAR_16', 48000, 'en-US', connection, server)
-		//console.log(`Speech to text conversion: ${sttResult}`)
 		return
 	}
-	//const bumblebee = new Bumblebee();
-	
-	//bumblebee.addHotword('bumblebee')
+
 	const bumblebee = new Bumblebee();
-	bumblebee.addHotword('blueberry');
+	bumblebee.addHotword(hotword);
+
 	//bumblebee.setHotword('blueberry')
 	//bumblebee.addHotword('bumblebee')
 
@@ -43,7 +41,7 @@ async function processStream(inputStream, connection, server) {
 		console.log('Detected hotword!');
 		didDetectHotword = true;
 		detectedHotwordLast = true
-		const dispatcher = connection.play('/home/valtov/Projects/Discord/UIFinal.mp3')
+		const dispatcher = connection.play('./audio/UIFinal.mp3')
 		//bumblebee.stop()
 	});
 

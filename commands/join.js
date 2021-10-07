@@ -26,7 +26,7 @@ module.exports = {
         server.connection = connection
         console.log(`Connection to voice channel is made ${connection}`)
         
-        const dispatcher = connection.play('/home/valtov/Projects/Discord/UIFinal.mp3')
+        const dispatcher = connection.play('../audio/UIFinal.mp3')
 
         dispatcher.on('start',  () => { console.log('joined.mp3 is now playing!'); });
         dispatcher.on('finish', () => { console.log('joined.mp3 has finished playing!'); });
