@@ -6,7 +6,7 @@ Any command added to the bot (follow sample commands from the commands folder) w
 
 All music is played by ytdl-core and speech-text processing is done with DialogFlow and Bumblebee hotword
 
-Sample Usage After Running Bot:
+### Sample Usage After Bot is Installed and Running
 
 Type !join while in a voice channel to have the bot join
 
