@@ -1,9 +1,6 @@
 // Imports the Google Cloud client library
 const speech = require('@google-cloud/speech');
 const fs = require('fs').promises;
-//const ConvertTo1Channel = require("./stream_transformer.js")
-//const Converter = new ConvertTo1Channel()
-
 
 // Creates a client
 const client = new speech.SpeechClient();

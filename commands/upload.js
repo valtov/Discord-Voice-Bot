@@ -1,3 +1,6 @@
+/* Incomplete command, was messing around with AWS buckets to store audio files uploaded by users in the discord server
+*/
+
 const https = require('https');
 const fs = require('fs');
 //const stream = require('stream')
@@ -114,19 +117,4 @@ async function upload_to_aws(url, key){
             console.log("Error", err);
         }
       }
-  /*
-      async function uploadFromStream(s3, key) {
-    var pass = new stream.PassThrough();
-
-    var params = {Bucket: DISCORD_BUCKET, Key: key, Body: pass};
-    try {
-      const data = await s3.send(new PutObjectCommand(params));
-      console.log("Upload success", data);
-    } catch (err) {
-      console.log("Error", err);
-    }
-
-    return pass;
-  }
-  */
 }

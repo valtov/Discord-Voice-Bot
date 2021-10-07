@@ -24,36 +24,5 @@ async function processSpeech(transcript, connection, server) {
 	  console.log('there was an error trying to execute that command!');
   }
 }
-/*
-    transcript = transcript.toLowerCase()
-    var command;
-    if (transcript.length == 1)
-        command = transcript;
-    else
-        command = transcript.substr(0, transcript.indexOf(" "));
-    
-    console.log(`Command processed: ${command}`)
-    switch(command) {
-        case 'play':
-            console.log('Command: play activated')
-            const r = await yts( transcript.substr(transcript.indexOf(" ") + 1)  )
-            const yt_link = r.videos[0].url
-            server.dispatcher = connection.play(ytdl(yt_link, { quality: 'highestaudio', filter: 'audioonly' }));
-            break;
-        case 'stop':
-            console.log('Command: stop activated')
-            server.dispatcher.pause()
-            break;
-        default:
-            console.log(`Command: ${command} invalid`)
-    }
-    */
-    /*
-    videos.forEach( function ( v ) {
-            const views = String( v.views ).padStart( 10, ' ' )
-            console.log( `${ views } | ${ v.title } (${ v.timestamp }) | ${ v.author.name } | ${v.url}` )
-    } )
-    */
-
 
 exports.processSpeech = processSpeech; 

@@ -10,8 +10,7 @@ async function streamingDetectIntent(
   connection, 
   server
 ) {
-  // [START dialogflow_detect_intent_streaming]
-  //const fs = require('fs');
+
   const util = require('util');
   const {Transform, pipeline} = require('stream');
   const {struct} = require('pb-util');
@@ -67,32 +66,6 @@ async function streamingDetectIntent(
 
         console.log(`Detected speech: ${result.queryText}`);
         speech_handler.processSpeech(result.queryText, connection, server)
-        //return result
-        /*console.log(`  Response: ${result.fulfillmentText}`);
-        if (result.intent) {
-          console.log(`  Intent: ${result.intent.displayName}`);
-        } else {
-          console.log('  No intent matched.');
-          return
-        }
-        */
-        //const parameters = JSON.stringify(struct.decode(result.parameters));
-        //console.log(`  Parameters: ${parameters}`);
-        /*if (result.outputContexts && result.outputContexts.length) {
-          console.log('  Output contexts:');
-          result.outputContexts.forEach(context => {
-            const contextId = contextClient.matchContextFromProjectAgentSessionContextName(
-              context.name
-            );
-            const contextParameters = JSON.stringify(
-              struct.decode(context.parameters)
-            );
-            console.log(`    ${contextId}`);
-            console.log(`      lifespan: ${context.lifespanCount}`);
-            console.log(`      parameters: ${contextParameters}`);
-          });
-        }
-        */
       }
     });
 
