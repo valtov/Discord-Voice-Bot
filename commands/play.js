@@ -22,7 +22,7 @@ module.exports = {
 
         server.dispatcher = server.connection.play(await ytdl(yt_link), {type: 'opus'} );
 
-        console.log(`${playing_message.id}`)
+        console.log(`Message id: ${playing_message.id}`)
         playing_message.react('⏯️')
         
         const filter = (reaction, user) => {

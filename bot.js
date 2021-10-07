@@ -1,9 +1,6 @@
 const fs = require('fs')
 const Discord = require("discord.js");
 const {prefix, token} = require('./config.json')
-const audioStreamHandler = require("./stream_handler.js")
-const ytdl = require("ytdl-core")
-var stream = require('stream')
 
 const discordClient = new Discord.Client();
 
@@ -25,7 +22,7 @@ discordClient.on('message', async (message) => {
     console.log(`Message --${message.content}-- ignored`)
     return;
   }
-  const main_channel = discordClient.channels.cache.get('669100761359187972')
+  const main_channel = message.channel
   server.channel = main_channel
   server.client = discordClient
   
