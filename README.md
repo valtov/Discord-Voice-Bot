@@ -27,9 +27,7 @@ config.json: The discord bot configuration including the Discord Bot API key
 ```sample config.json
 {
     "prefix": "!",
-    "token": "NzQ1ODAwMDM2NzEyOTcyNDI4.Xz3CaQ.5zB2cR0SxHO0pMIU-XAZfJGCAtE",
-    "aws_access_key_id": "AKIAJX6SGP3GRDHWJCRQ",
-    "aws_secret_access_key": "rF5blqeCATixxpqdK7hMxo1lI4TP6OWbJyNZH6Rh"
+    "token": "DISCORD_TOKEN"
 }
 ```
 
